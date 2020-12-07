@@ -29,7 +29,7 @@
             <li class="dropdown-submenu">
                 <a tabindex="-1" href="#" class="blc">Color</a>
                 <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="{{$url}}color=black&" class="blc">Black</a></li>
+                    <li><a tabindex="-1" href="{{$url}}color=black" class="blc">Black</a></li>
                     <li><a href="{{$url}}color=gray&" class="blc">Gray</a></li>
                     <li><a href="{{$url}}color=white&" class="blc">White</a></li>
                     <li><a href="{{$url}}color=green&" class="blc">Green</a></li>
@@ -43,9 +43,9 @@
             Order by <span class="caret"></span>
         </a>
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-            <li><a tabindex="-1" href="#" class="blc">Aplhabetically</a></li>
-            <li><a tabindex="-1" href="#" class="blc">Price ascending</a></li>
-            <li><a tabindex="-1" href="#" class="blc">Price descending</a></li>
+            <li><a tabindex="-1" href="{{$url}}order=title&how=asc" class="blc">Aplhabetically</a></li>
+            <li><a tabindex="-1" href="{{$url}}order=price&how=asc" class="blc">Price ascending</a></li>
+            <li><a tabindex="-1" href="{{$url}}order=price&how=desc" class="blc">Price descending</a></li>
         </ul>
     </div>
 </div>
@@ -83,7 +83,7 @@
             <div class="col-10 mx-auto col-sm-6 text-center">
                 <h1 class="text-capitalize">
                     @isset($category)
-                        {{$category}}
+                        Chosen products
                     @else
                         All Products
                     @endisset
@@ -95,7 +95,7 @@
             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                 <div class="card">
                     <div class="img-container">
-                        <img src={{$item->img}} class="card-img-top"/>
+                        <img src="./.{{$item->img}}" class="card-img-top"/>
                     </div>
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">

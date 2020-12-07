@@ -2,7 +2,7 @@
            <nav class="navbar navbar-expand-sm navbar-dark bg-black">
                <div class="container">
                    <a class="navbar-brand col-4" href="/">
-                       <img src="./img/Logo/logo_size_invert.jpg" alt="logo">
+                       <img src="./../img/Logo/logo_size_invert.jpg" alt="logo">
                    </a>
                    <!-- Login button on small devices, if the user is already logged in,
                    there will be button with user name instead-->
@@ -21,7 +21,7 @@
                             @auth
                             <li class="nav-item d-none d-sm-block">
                                 <a class="nav-link" href="{{ __('Dashboard') }}">Home</a>
-                            </li>                            
+                            </li>
                             @else
                             <li class="nav-item d-none d-sm-block">
                                 <a class="nav-link" href="{{ route('register') }}">Register</a>
