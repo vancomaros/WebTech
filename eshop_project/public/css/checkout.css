@@ -1,0 +1,129 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.navbar .navlink {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+}
+
+.navbar-toggler {
+    outline: none;
+    left: 3%;
+}
+
+.head {
+    margin-top: 0%;
+    padding-bottom: 15px;
+}
+
+.bg-black {
+    background: black;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+
+#categories {
+    width: 100%;
+}
+
+.category-list {
+    position: relative;
+    left: 16.66%;
+}
+
+.text-up {
+    position: relative;
+    top: 20%;
+    left: 50%;
+}
+
+.title-color {
+    color: white;
+}
+
+.btn-color {
+    background: black;
+    color: gray;
+}
+
+.btn-color:hover {
+    color: white;
+}
+
+.checkout-row {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.button-row {
+    margin-top: 80px;
+}
+
+.checkout-container {
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 70%;
+    padding-bottom: 14vh;
+}
+
+.h-heading {
+    padding-bottom: 50px;
+    font-size: 35px;
+}
+.footer-container {
+    margin: 0 auto;
+}
+
+.footer-footer {
+    bottom:0;
+    position: relative;
+    width: 100%;
+    background-color: black;
+    padding: 0px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-areas: 'myAreaH'
+                         'myAreaM'
+                         'myAreaF';
+}
+
+.grid-layout > header {
+    grid-area: myAreaH;
+}
+
+.grid-layout > main {
+    grid-area: myAreaM;
+}
+
+.grid-layout > footer {
+    grid-area: myAreaF;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-top: 10vh;
+}
+
+footer a{
+    font-size: 14px;
+    color: gray;
+}
+
+.shrinked {
+    font-size: 10px;
+    color: gray;
+}
+
+.space {
+    margin-bottom: 30px;
+}

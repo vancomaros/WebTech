@@ -1,0 +1,138 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .navlink {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+}
+
+.navbar-toggler {
+    outline: none;
+    left: 3%;
+}
+
+.head {
+    margin-top: 0%;
+    padding-bottom: 15px;
+}
+
+.input-group.md-form.form-sm.form-1 input{
+    border: 1px solid #bdbdbd;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  .input-group.md-form.form-sm.form-2 input.red-border {
+    border: 1px solid #ffffff;
+  }
+
+.bg-black {
+    background: black;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+/*pixabay.com --> free images*/
+.carousel-image-1 {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+    url('../img/slider-headphones.jpg');
+    background-size: cover;
+}
+
+.carousel-image-2 {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+    url('../img/slider-IPhone.jpg');
+    background-size: cover;
+}
+
+.carousel-image-3 {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+    url('../img/slider-ps4.jpg');
+    background-size: cover;
+}
+
+#categories {
+    width: 100%;
+}
+
+.category-list {
+    position: relative;
+    left: 16.66%;
+}
+
+.text-up {
+    position: relative;
+    top: 20%;
+    left: 50%;
+}
+
+.title-color {
+    color: white;
+}
+
+.btn-color {
+    background: black;
+    color: gray;
+}
+
+.btn-color:hover {
+    color: white;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0,0,0,0.4);
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+}
+
+/*zoom pictutes on hover*/
+.img-container:hover {
+    box-shadow: 1px 0 1px 4px rgba(0,0,0,0.4);
+    transform: scale(1.1);
+}
+
+.color-black {
+    color: black;
+}
+
+.color-black:hover {
+    background-color: black;
+    color: white;
+}
+
+.list-group-item:hover {
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    font-size: 14px;
+    color: gray;
+}
+
+.shrinked {
+    font-size: 10px;
+    color: gray;
+}
+
+.search-window {
+    position: relative;
+    height: 10%;
+}

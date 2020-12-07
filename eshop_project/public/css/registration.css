@@ -1,0 +1,68 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-black {
+    background: black;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+.wid {
+    width: 100%;
+}
+
+.btn-color {
+    background: black;
+    color: gray;
+}
+
+.btn-color:hover {
+    color: white;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-areas: 'myAreaH'
+                         'myAreaM'
+                         'myAreaF';
+}
+
+.grid-layout > header {
+    grid-area: myAreaH;
+}
+
+.grid-layout > main {
+    grid-area: myAreaM;
+}
+
+.grid-layout > footer {
+    grid-area: myAreaF;
+}
+
+
+.border-black {
+    border-color: black;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a{
+    font-size: 14px;
+    color: gray;
+}
+
+.shrinked {
+    font-size: 10px;
+    color: gray;
+}
+
+.space {
+    margin-bottom: 30px;
+}
