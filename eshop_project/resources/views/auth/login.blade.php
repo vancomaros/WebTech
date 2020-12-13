@@ -22,7 +22,7 @@
                     <button type="submit" class="btn btn-primary btn-block btn-dark mt-3 mx-auto">
                         Login
                     </button>
-                    <p class="mt-2">Not registered? Click <a href="registration"><strong>Here!</strong></a></p>
+                    <p class="mt-2">Not registered? Click <a href="register"><strong>Here!</strong></a></p>
                 </form>
             </div>
         </x-guest-layout>

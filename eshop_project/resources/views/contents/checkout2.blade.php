@@ -50,8 +50,8 @@
                     </div>
                 </form>
                 <div class="d-flex justify-content-between button-row">
-                    <a><button class="btn btn-dark btn-sm">Back</button></a>
-                    <a><button class="btn btn-dark btn-sm">Finish your order</button></a>
+                    <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('checkout') }}'">Back</button></a>
+                    <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('/') }}'">Finish your order</button></a>
                 </div>
             </div>
         </div>

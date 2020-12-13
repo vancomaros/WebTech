@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    //protected $fillable = ['title', 'description', 'rating', 'specs', 'color', 'price', 'img'];
+    protected $table = 'items';
+    protected $fillable = ['title', 'description', 'rating', 'specs', 'color', 'price', 'category', 'img'];
 
     use HasFactory;
 }

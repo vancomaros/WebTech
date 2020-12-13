@@ -20,7 +20,7 @@
                        @if (Route::has('login'))
                             @auth
                             <li class="nav-item d-none d-sm-block">
-                                <a class="nav-link" href="{{ __('Dashboard') }}">Home</a>
+                                <a class="nav-link" href="{{ __('dashboard') }}">Profile</a>
                             </li>
                             @else
                             <li class="nav-item d-none d-sm-block">
@@ -68,18 +68,12 @@
            </nav>
            <!--End of nav-->
 
-            <!--Search-->
-            <div class="bg-black head">
-                <div class="searchbar">
-                    <div class="input-group row">
-                        <input class="form-control col-7 col-md-4 col-sm-8 mt-2 py-1 mx-auto amber-border search-window"
-                            type="text" name="query" placeholder="Search" aria-label="Search">
-                        <a class="nav-link btn btn-color mt-1" href="#">
-                            <i class="fas fa-shopping-cart fa-2x"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
-           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+           <!-- <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script> -->
+
+        

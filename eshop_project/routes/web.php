@@ -26,16 +26,25 @@ use Illuminate\Support\Facades\Password;
 //Route::get('/login', 'LoginController@create');
 //Route::post('/login', 'LoginController@store');
 //Route::get('/login', 'LoginController@show');
-Route::get('/registration', 'RegistrationController@show');
-Route::post('/registration', 'RegistrationController@store');
+//Route::get('/registration', 'RegistrationController@show');
+//Route::post('/registration', 'RegistrationController@store');
 Route::get('/checkout', 'CheckoutController@show');
 Route::get('/checkout2', 'Checkout2Controller@show');
 Route::get('/list', 'ProductListController@index');
-Route::get('/list/color/{id}', 'ProductListController@show');
+Route::get('/list/search', 'ProductListController@search');
 Route::get('/list/{id}', 'ProductListController@category');
 Route::get('/cart', 'CartController@show');
+Route::get('/product/{id}', 'ProductController@show');
+Route::get('/product', 'ProductController@index');
 
+
+Route::get('cart', 'ProductController@cart');
+Route::get('add-to-cart/{id}', 'ProductController@addToCart');
+Route::patch('update-cart', 'ProductController@update');
+Route::delete('/remove-from-cart', 'ProductController@remove');
 Route::resource('/', 'ItemController');
+Route::get('checkout', 'ProductController@checkout');
+Route::get('checkoutnext', 'ProductController@checkoutnext');
 
  //Route::get('/product',  'App\Http\Controllers\ItemController')
 

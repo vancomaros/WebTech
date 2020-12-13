@@ -26,13 +26,16 @@ class CreateNewUser implements CreatesNewUsers
             'last_name' => ['required', 'string', 'max:255'],
             'password' => $this->passwordRules(),
         ])->validate();
-
+        $value = $input["inlineRadioOptions"] == 'true' ? 'Female' : 'Male';
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'first_name' => $input['first_name'],
             'last_name' =>  $input['last_name'],
             'password' => Hash::make($input['password']),
+            'gender' => $value,
+            'birthdate' => $input['birthdate'],
+
         ]);
     }
 }

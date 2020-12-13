@@ -12,7 +12,7 @@
         <form class="my-5 col-10 col-md-4 col-sm-8 col-lg-4 col-xl-4" action="{{route('register')}}" method="POST">
             @csrf
             <div class="form-group row">
-                <label class="col-sm-5 col-form-label">First name</label>
+                <label class="col-sm-5 col-form-label">User name</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" placeholder="" name="name" required autofocus autocomplete="name">
                 </div>
@@ -50,18 +50,18 @@
             <div class="form-group row">
                 <label class="col-sm-5 col-form-label">Birthday</label>
                 <div class="col-sm-7">
-                    <input type="date" class="form-control" name="birthday"/>
+                    <input type="date" class="form-control" name="birthdate"/>
                 </div>
             </div>
             <div class="form-group row pb-3">
                 <label class="col-sm-5 col-form-label">Gender</label>
                 <div class="col-sm-7 ">
                     <div class="form-check form-check-inline pl-5">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
                         <label class="form-check-label" for="inlineRadio1">Male</label>
                     </div>
                     <div class="form-check form-check-inline pl-5">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
                         <label class="form-check-label" for="inlineRadio2">Female</label>
                     </div>
                 </div>

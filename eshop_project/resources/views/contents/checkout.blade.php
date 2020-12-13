@@ -65,8 +65,8 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between button-row">
-                <a><button class="btn btn-dark btn-sm">Back</button></a>
-                <a><button class="btn btn-dark btn-sm">Continue</button></a>
+                <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('cart') }}'">Back</button></a>
+                <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('checkoutnext') }}'">Continue</button></a>
             </div>
         </div>
     </div>

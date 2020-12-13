@@ -10,39 +10,68 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item" aria-current="page">Electronics</li>
-                        <li class="breadcrumb-item">Gaming</li>
-                        <li class="breadcrumb-item" aria-current="page">Consoles</li>
-                        <li class="breadcrumb-item active" aria-current="page">PlayStation</li>
+                        <li class="breadcrumb-item">{{ $item->category}}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $item->title}}</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="row my-row">
             <div class='col-lg-6 col-md-4'>
-                <img src="img/PS5.jpg" class="d-block w-100 c-item" alt="Playstation 5 picture">
+                <img src="./.{{$item->img}}" class="d-block w-100 c-item" alt="Playstation 5 picture">
             </div>
             <div class="col-lg-6 col-md-9 col-sm-12 primary-col">
-                <h1>PlayStation 5</h1>
-                <h2 class="price">499.99€</h2>
+                <h1>{{$item->title}}</h1>
+                <h2 class="price">{{ $item->price}}€</h2>
 
-                <div class="rating">
-                    <i class="fa fa-star checked"></i>
-                    <i class="fa fa-star checked"></i>
-                    <i class="fa fa-star checked"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <span class="badge badge-dark">2</span>
-                </div>
+
+                    <div class="rating">
+                        @if ($item->rating === 1 )
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+
+                        @elseif ($item->rating === 2 )
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        @elseif ($item->rating === 3 )
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                        @elseif($item->rating === 4 )   
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star"></i>
+                        @else()
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                    
+                        @endif
+                        <span class="badge badge-dark">{{$item->rating}}</span> 
+                    </div>
                 <div class="version-menu">
                     <select class="browser-default custom-select w-50">
                         <option selected>Choose version</option>
-                        <option value="1">PlayStation 5</option>
-                        <option value="2">PlayStation 5 Digital Edition</option>
-                        <option value="3">PlayStation 5 Pro</option>
+                        <option value="1">{{$item->title}}</option>
                     </select>
                 </div>
                 <div class="add-to-cart">
+                <a href="{{ url('add-to-cart/'.$item->id) }}">
                     <button type="button" class="btn btn-dark">Add to cart</button>
+                </a>
+                    
                     <input type='number' value="1">
                 </div>
 
@@ -68,88 +97,14 @@
                                 <h1 class="display-4">Item description</h1>
                                 <div class="row">
                                     <div class="col-lg-5 mb-4 my-lg-auto">
-                                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Integer
-                                            sit amet metus eros.
-                                            Maecenas aliquet id nibh in condimentum. Morbi id elit eu ante
-                                            convallis
-                                            efficitur.
-                                            In cursus quam libero, non rutrum lacus bibendum vitae. Phasellus
-                                            vel nibh
-                                            ut turpis suscipit luctus.
-                                            Fusce ultricies ante mauris, et ullamcorper lorem iaculis non. Fusce
-                                            eleifend sodales ipsum.
-                                            Praesent hendrerit, lorem nec aliquam mollis, nisl mi convallis
-                                            massa, ac
-                                            commodo urna nibh eu elit.
-                                            Duis eleifend arcu at neque pellentesque auctor.</p>
+                                        <p class="lead"> {{$item->title}} </p>
                                     </div>
                                     <div class="col-lg-7">
-                                        <img src="/img/PS5.jpg" alt="console picture" class="w-100">
+                                        <img src="./.{{$item->img}}" alt="console picture" class="w-100">
                                     </div>
                                 </div>
                                 <br>
-                                <p class="lead">Aenean ut sodales ex. Ut viverra est ac nibh tincidunt tempor.
-                                    Vivamus venenatis augue a semper consectetur. Etiam viverra iaculis euismod.
-                                    Suspendisse ullamcorper mi urna, at luctus est blandit eu. Donec sed dui
-                                    vulputate
-                                    mi lobortis convallis.
-                                    Suspendisse est erat, pellentesque quis tellus non, pulvinar imperdiet
-                                    libero.
-                                    Sed hendrerit condimentum varius. Pellentesque vel ante lectus.</p>
-                                <br>
-                                <p class="lead">Aenean id eros metus. Nunc quis purus in orci iaculis tincidunt
-                                    quis ut
-                                    mauris.
-                                    Aenean feugiat efficitur elit, et consectetur leo vestibulum a. Fusce mollis
-                                    tempor
-                                    nisi a volutpat.
-                                    Nam mattis tellus efficitur, blandit purus ac, varius lorem.
-                                    Curabitur ullamcorper justo eu lacus aliquet, nec cursus ex gravida.
-                                    Aliquam vel tortor elit. Pellentesque in enim a metus luctus laoreet.
-                                    Aenean quis pulvinar sem, quis dapibus lectus. Maecenas sollicitudin mauris
-                                    sed
-                                    luctus eleifend.</p>
-                                <br>
-                                <p class="lead">Quisque at vehicula sapien. Maecenas eu lorem velit. Donec vitae
-                                    quam
-                                    urna. Fusce nec varius metus, ut condimentum eros.
-                                    Fusce scelerisque rutrum libero, id euismod quam. Ut vitae accumsan velit,
-                                    in
-                                    volutpat odio. Nulla facilisi.
-                                    Nulla aliquet egestas dignissim. Nunc efficitur orci ut viverra commodo.
-                                    Suspendisse
-                                    nec ante vitae ligula mattis condimentum.
-                                    Praesent feugiat sollicitudin tempor. Sed scelerisque pulvinar finibus.
-                                    Phasellus
-                                    imperdiet sapien at turpis volutpat rhoncus.
-                                    Pellentesque vitae enim vel nunc sollicitudin luctus. Duis vitae est semper,
-                                    vehicula orci in, ultrices libero. Ut nec interdum orci, a interdum augue.
-                                </p>
-                                <br>
-                                <p class="lead">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                                    posuere
-                                    cubilia curae; Proin pellentesque aliquet mauris.
-                                    Phasellus molestie dui et ipsum mattis fermentum. Nullam congue magna sit
-                                    amet
-                                    mattis efficitur.
-                                    Integer lacus arcu, efficitur sit amet pretium in, blandit ac libero. Nam
-                                    aliquam
-                                    lacinia laoreet.
-                                    Sed vehicula, quam eget pellentesque tempor, libero erat rhoncus nisi, eget
-                                    ullamcorper quam neque ut lacus.
-                                    Duis varius mauris eu mauris fringilla tempus. Aenean libero mauris,
-                                    molestie nec
-                                    diam nec, elementum pulvinar dui.
-                                    Duis porta erat nunc, eu elementum felis fermentum sed. Suspendisse
-                                    hendrerit, odio
-                                    in vehicula eleifend, ipsum sapien mattis libero, vel eleifend purus neque
-                                    quis
-                                    enim.
-                                    Pellentesque volutpat suscipit dui feugiat varius.
-                                    Etiam efficitur dolor leo, quis faucibus diam fermentum vel. In ac hendrerit
-                                    lacus.
-                                </p>
+                                <p class="lead">{{$item->description}}</p>
                             </div>
                         </div>
                     </div>
@@ -162,32 +117,11 @@
                                         <tr>
 
                                             <td>Version</td>
-                                            <td>PS5</td>
+                                            <td>{{ $item->title}}</td>
                                         </tr>
                                         <tr>
-
-                                            <td>Storage capacity</td>
-                                            <td>888 GB</td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>Storage type</td>
-                                            <td>SSD</td>
-                                        </tr>
-                                        <tr>
-
                                             <td>Color</td>
-                                            <td>White</td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>Width</td>
-                                            <td>39 cm</td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>Height</td>
-                                            <td>26 cm</td>
+                                            <td>{{$item->color}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -204,7 +138,7 @@
                                             <div class="blog-comment">
                                                 <ul class="comments">
                                                     <li class="clearfix">
-                                                        <img src="img/user_1.jpg" class="avatar" alt="">
+                                                        <img src="/img/user_1.jpg" class="avatar" alt="">
                                                         <div class="post-comments">
                                                             <p class="meta">Dec 18, 2019 <a href="#">JohnDoe</a>
                                                                 says :
@@ -226,7 +160,7 @@
                                                         </div>
                                                     </li>
                                                     <li class="clearfix">
-                                                        <img src="img/user_2.jpg" class="avatar" alt="">
+                                                        <img src="/img/user_2.jpg" class="avatar" alt="">
                                                         <div class="post-comments">
                                                             <p class="meta">Jan 19, 2018 <a href="#">JaneDoe</a>
                                                                 says : <i class="float-right"><a
@@ -244,18 +178,7 @@
                                                                 Etiam a sapien odio, sit amet
                                                             </p>
                                                         </div>
-                                                        <!--<ul class="comments"> example of a review reply
-                                            <li class="clearfix">
-                                                <img src="https://bootdey.com/img/Content/user_3.jpg" class="avatar" alt="">
-                                                <div class="post-comments">
-                                                    <p class="meta">Dec 20, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Etiam a sapien odio, sit amet
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>-->
+
                                                     </li>
                                                 </ul>
                                             </div>
@@ -294,69 +217,42 @@
                             <div class="container">
                                 <h1 class="display-4">Similar items</h1>
                                 <div class="row">
-                                    <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                                        <div class="card">
-                                            <div class="img-container">
-                                                <img src="/img/Featured/lens-3143893_640.jpg"
-                                                    alt="High zoom camera" class="card-img-top" />
-                                            </div>
-                                            <div class="card-body">
-                                                <div
-                                                    class="card-text d-flex justify-content-between text-capitalize">
-                                                    <h5>
-                                                        Camera
-                                                    </h5>
-                                                    <span>
-                                                        <i class="fas fa-euro-sign"></i>
-                                                        2999
-                                                    </span>
+                                    @if(count($similar) > 1)
+                                        @foreach($similar as $simitem)
+                                            @if ($loop->iteration == 4)
+                                                @break 
+                                            @endif
+                                            @if ($simitem->id == $item->id)
+                                                @continue
+                                            @endif
+                                            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                                                <div class="card">
+                                                    <div class="img-container">
+                                                        <a href="/product/{{$simitem->id}}">
+                                                        <img src="./.{{$simitem->img}}"
+                                                            alt="{{$simitem->title}}" class="card-img-top" />
+                                                            </a>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div
+                                                            class="card-text d-flex justify-content-between text-capitalize">
+                                                            <h5>
+                                                                {{$simitem->title}}
+                                                            </h5>
+                                                            <span>
+                                                                <i class="fas fa-euro-sign"></i>
+                                                                {{$simitem->price}}
+                                                            </span>
+                                                        </div>
+                                                        <p>{{$simitem->description}}</p>
+                                                    </div>
                                                 </div>
-                                                <p>High quality camera</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                                        <div class="card">
-                                            <div class="img-container">
-                                                <img src="/img/Featured/earphones-791188_640.jpg"
-                                                    alt="Good quality earphones" class="card-img-top" />
-                                            </div>
-                                            <div class="card-body">
-                                                <div
-                                                    class="card-text d-flex justify-content-between text-capitalize">
-                                                    <h5>
-                                                        Earphones
-                                                    </h5>
-                                                    <span>
-                                                        <i class="fas fa-euro-sign"></i>
-                                                        99
-                                                    </span>
-                                                </div>
-                                                <p>Earphones with jack connector</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                                        <div class="card">
-                                            <div class="img-container">
-                                                <img src="/img/Featured/smart-watch-821559_640.jpg"
-                                                    alt="Smart Watch" class="card-img-top" />
-                                            </div>
-                                            <div class="card-body">
-                                                <div
-                                                    class="card-text d-flex justify-content-between text-capitalize">
-                                                    <h5>
-                                                        Apple Watch
-                                                    </h5>
-                                                    <span>
-                                                        <i class="fas fa-euro-sign"></i>
-                                                        499
-                                                    </span>
-                                                </div>
-                                                <p>Smart watch for Apple users</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    @else
+                                        <p>No similar items exist</p>
+                                    @endif
+
                                 </div>
                             </div>
                         </div>

@@ -52,12 +52,12 @@
             <div class="form-group row pb-3">
                 <label class="col-sm-5 col-form-label">Gender</label>
                 <div class="col-sm-7 ">
-                    <div class="form-check form-check-inline pl-5">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <div class="form-check form-check-inline pl-5" name="radioOption">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
                         <label class="form-check-label" for="inlineRadio1">Male</label>
                     </div>
                     <div class="form-check form-check-inline pl-5">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
                         <label class="form-check-label" for="inlineRadio2">Female</label>
                     </div>
                 </div>

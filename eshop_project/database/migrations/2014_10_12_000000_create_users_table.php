@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('last_name');
             $table->string('first_name');
+            $table->string('gender');
+            $table->date('birthdate');
         });
     }
 
