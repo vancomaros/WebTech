@@ -12,62 +12,49 @@
             <div class="row justify-content-center checkout-row" align="center">
                 <div class="col-md-8 col-sm-10">
                     <h2>Shipping</h2>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="shipping-radio" id="exampleRadios1"
-                               value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            Personal pickup
-                        </label>
-                        <a>- 0€</a>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="shipping-radio" id="exampleRadios2"
-                               value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Delivery service
-                        </label>
-                        <a>- 3.99€</a>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="shipping-radio" id="exampleRadios3"
-                               value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            Delivery by mail
-                        </label>
-                        <a>- 2.49€</a>
-                    </div>
+                    {!! Form::open(['url' =>'paymentshipping', 'method' => 'GET']) !!}
+                        <div class="form-check">
+                            {{Form::radio('shipping', 'Personal', true)}}
+                            {{Form::label('title', 'Personal pickup - 0€')}}
+                        </div>
+                        <div class="form-check">
+                            {{Form::radio('shipping', 'Delivery', false)}}
+                            {{Form::label('title', 'Delivery service - 3,99€')}}
+                        </div>
+                        <div class="form-check">
+                            {{Form::radio('shipping', 'Mail', false)}}
+                            {{Form::label('title', 'Delivery by mail - 2,49€')}}
+                        </div>
                 </div>
             </div>
             <div class="row justify-content-center checkout-row" align="center">
                 <div class="col-md-8 col-sm-10">
-                    <h2>Payment method</h2>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment-radio" id="exampleRadios1"
-                               value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            Pay with card
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment-radio" id="exampleRadios2"
-                               value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Pay on delivery
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment-radio" id="exampleRadios3"
-                               value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            Bank Transfer
-                        </label>
-                    </div>
+                <h2>Payment method</h2>
+
+                        <div class="form-check">
+                            {{Form::radio('payment', 'card', true)}}
+                            {{Form::label('title', 'Pay with card')}}
+                        </div>
+                        <div class="form-check">
+                            {{Form::radio('payment', 'onDelivery', false)}}
+                            {{Form::label('title', 'Pay on delivery')}}
+                        </div>
+                        <div class="form-check">
+                            {{Form::radio('payment', 'bankTransfer', false)}}
+                            {{Form::label('title', 'Bank trasfer')}}
+                        </div>
+
+                    
+                    
                 </div>
             </div>
             <div class="d-flex justify-content-between button-row">
-                <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('cart') }}'">Back</button></a>
-                <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('checkoutnext') }}'">Continue</button></a>
+            {{Form::button('Back', ['class' => 'btn btn-dark btn-sm'])}}
+            {{Form::button('Continue', ['class' => 'btn btn-dark btn-sm', 'type' => 'submit'])}}
+                <!-- <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('cart') }}'">Back</button></a>
+                <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('checkoutnext') }}'">Continue</button></a> -->
             </div>
+            {!! Form::close() !!}
         </div>
     </div>
 </main>

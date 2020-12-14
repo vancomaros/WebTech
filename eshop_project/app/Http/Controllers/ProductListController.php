@@ -14,6 +14,8 @@ class ProductListController extends Controller
         $page = request('page');
         $color = request('color');
         $brand = request('brand');
+        $pricemin = request('pricemin', 0) - 1;
+        $pricemax = request('pricemax', 99999) + 1;
         $order = request('order');
         $how = request('how');
         if (!(strlen($order) > 0)) {
@@ -27,15 +29,22 @@ class ProductListController extends Controller
         }
 
         $items = DB::table('items')->select('*')
-            ->where('color', 'like', '%' . $color . '%')
+            ->where([['color', 'like', '%' . $color . '%'],
+                    ['brand', 'like', '%' . $brand . '%'],
+                    ['price', '>', $pricemin],
+                    ['price', '<', $pricemax]])
             ->orderBy($order, $how)->get();
 
         $data = DB::table('items')->select('*')
-            ->where('color', 'like', '%' . $color . '%')
+            ->where([['color', 'like', '%' . $color . '%'],
+                    ['price', '>', $pricemin],
+                    ['price', '<', $pricemax],
+                    ['brand', 'like', '%' . $brand . '%']])
             ->orderBy($order, $how)->paginate(9);
 
         $url = url()->full();
-        if (strlen($color) > 0 || strlen($brand) > 0 || strlen($temp) > 0 || strlen($page) > 0) {
+        if (strlen($color) > 0 || strlen($brand) > 0 || strlen($temp) > 0 || strlen($page) > 0
+            || (strlen($pricemax > 1) && strlen($pricemax < 5))) {
             $url .= "&";
         }
         else {
@@ -56,6 +65,8 @@ class ProductListController extends Controller
         $page = request('page');
         $color = request('color');
         $brand = request('brand');
+        $pricemin = request('pricemin', 1) - 1;
+        $pricemax = request('pricemax', 99999) + 1;
         $order = request('order');
         $how = request('how');
         if (!(strlen($order) > 0)) {
@@ -68,19 +79,26 @@ class ProductListController extends Controller
             $how = "asc";
         }
 
-                            // and brand like '%$brand%'
+
         $items = DB::table('items')->select('*')
             ->where([['category', 'like', '%' . $category  . '%'],
-                    ['color', 'like', '%' . $color . '%']])
+                    ['color', 'like', '%' . $color . '%'],
+                    ['price', '>', $pricemin],
+                    ['price', '<', $pricemax],
+                    ['brand', 'like', '%' . $brand . '%']])
             ->orderBy($order, $how)->get();
 
         $data = DB::table('items')->select('*')
             ->where([['category', 'like', '%' . $category  . '%'],
-                ['color', 'like', '%' . $color . '%']])
+                ['color', 'like', '%' . $color . '%'],
+                ['price', '>', $pricemin],
+                ['price', '<', $pricemax],
+                ['brand', 'like', '%' . $brand . '%']])
             ->orderBy($order, $how)->paginate(9);
 
         $url = url()->full();
-        if (strlen($color) > 0 || strlen($brand) > 0 || strlen($temp) > 0 || strlen($page)) {
+        if (strlen($color) > 0 || strlen($brand) > 0 || strlen($temp) > 0 || strlen($page) ||
+            (strlen($pricemax > 1) && strlen($pricemax < 5))) {
             $url .= "&";
         }
         else {
@@ -100,6 +118,8 @@ class ProductListController extends Controller
         $page = request('page');
         $color = request('color');
         $brand = request('brand');
+        $pricemin = request('pricemin', 0) - 1;
+        $pricemax = request('pricemax', 99999) + 1;
         $order = request('order');
         $how = request('how');
 
@@ -115,20 +135,28 @@ class ProductListController extends Controller
 
         $items = DB::table('items')->select('*')
             ->where([['title', 'ilike', '%' . $search_text  . '%'],
-                ['color', 'like', '%' . $color . '%'],/*
-                ['brand', 'like', '%' . $brand . '%']*/])
+                ['color', 'like', '%' . $color . '%'],
+                ['price', '>', $pricemin],
+                ['price', '<', $pricemax],
+                ['brand', 'like', '%' . $brand . '%']])
             ->orWhere([['description', 'ilike', '%' . $search_text  . '%'],
-                ['color', 'like', '%' . $color . '%'],/*
-                ['brand', 'like', '%' . $brand . '%']*/])
+                ['color', 'like', '%' . $color . '%'],
+                ['price', '>', $pricemin],
+                ['price', '<', $pricemax],
+                ['brand', 'like', '%' . $brand . '%']])
             ->orderBy($order, $how)->get();
 
         $data = DB::table('items')->select('*')
             ->where([['title', 'ilike', '%' . $search_text  . '%'],
-                ['color', 'like', '%' . $color . '%']/*,
-                ['brand', 'like', '%' . $brand . '%']*/])
+                ['color', 'like', '%' . $color . '%'],
+                ['price', '>', $pricemin],
+                ['price', '<', $pricemax],
+                ['brand', 'like', '%' . $brand . '%']])
             ->orWhere([['description', 'ilike', '%' . $search_text  . '%'],
-                ['color', 'like', '%' . $color . '%']/*,
-                ['brand', 'like', '%' . $brand . '%']*/])
+                ['color', 'like', '%' . $color . '%'],
+                ['price', '>', $pricemin],
+                ['price', '<', $pricemax],
+                ['brand', 'like', '%' . $brand . '%']])
             ->orderBy($order, $how)->paginate(9);
 
         $url = url()->full();

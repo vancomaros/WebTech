@@ -6,6 +6,7 @@
 
     <body>
         @include('layout.partials.nav')
+        @include('layout.partials.messages')
 
         <main role="main">
                         @yield('content')

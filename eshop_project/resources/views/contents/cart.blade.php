@@ -27,8 +27,8 @@
                         <tr>
                             <td>{{ $details['name'] }}</td>
                             <td>
-                                <a href=#><button type="button" class="btn btn-dark btn-sm decrease" data-id="{{ $id }}" data-quantity="{{ $details['quantity'] }}">-</button></a>{{ $details['quantity']}}
-                                <a href=#><button type="button" class="btn btn-dark btn-sm increase" data-id="{{ $id }}" data-quantity="{{ $details['quantity'] }}">+</button></a>
+                                <a href=#><button type="button" class="btn btn-dark btn-sm decrease mr-2" data-id="{{ $id }}" data-quantity="{{ $details['quantity'] }}">-</button></a>{{ $details['quantity']}}
+                                <a href=#><button type="button" class="btn btn-dark btn-sm increase ml-2" data-id="{{ $id }}" data-quantity="{{ $details['quantity'] }}">+</button></a>
                             </td>
                             <td>{{ $details['price'] }}€</td>
                             <td>
@@ -54,7 +54,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
+                <div align="left" class="proceed-div">
+                    <button type="button" class="btn btn-dark" onclick="location.href='{{ '/' }}'">Back to shopping</button>
+                </div>
+            </div>
+            <div class="col-md-6">
                 <div align="right" class="proceed-div">
                     <button type="button" class="btn btn-dark" onclick="location.href='{{ url('checkout') }}'">Proceed to checkout</button>
                 </div>

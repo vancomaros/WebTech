@@ -151,6 +151,7 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kcJ9PXkEFF5VIP9ydAUMsUmOYg" />
@@ -170,7 +171,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -204,6 +205,8 @@
       <workItem from="1607521450292" duration="910000" />
       <workItem from="1607556469056" duration="7252000" />
       <workItem from="1607785037005" duration="847000" />
+      <workItem from="1607870174142" duration="2979000" />
+      <workItem from="1607896823317" duration="42948000" />
     </task>
     <servers />
   </component>
@@ -247,5 +250,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607208363189" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1607896896547">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607896896547" />
   </component>
 </project>

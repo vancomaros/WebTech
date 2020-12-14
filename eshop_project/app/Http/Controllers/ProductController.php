@@ -81,23 +81,42 @@ class ProductController extends Controller
         
         return view('contents.cart');
     }
-    // public function addToCart($id)
-    // {
 
-    // }
 
     public function checkout()
     {
         return view('contents.checkout');
     }   
 
-    public function checkoutnext()
-    {
-        return view('contents.checkout2');
-    } 
 
-    public function addToCart($id)
+    public function paymentshipping(Request $request)
     {
+
+        return view('contents.checkout2');
+
+    }
+
+    public function credentials(Request $request)
+    {
+        $this->validate($request, [
+            'firstName' => 'required|max:255',
+            'lastName' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'email' => 'required|max:255',
+            'phoneNumber' => 'required|max:255',
+        ]);
+        $request->session()->forget('cart');
+
+        return redirect('/')->with('success', 'Order finished, thank you for your purchase!');
+    }
+
+    public function addToCart(Request $request, $id)
+    {
+        $this->validate($request, [
+            'q' => 'required',
+        ]);
+
         $product = Item::find($id);
         if(!$product) {
             abort(404);
@@ -108,20 +127,22 @@ class ProductController extends Controller
             $cart = [
                     $id => [
                         "name" => $product->title,
-                        "quantity" => 1,
+                        "quantity" => $request->input('q'),
                         "price" => $product->price,
                         // "photo" => $product->photo
                     ]
             ];
             
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Product added to cart successfully!');
+            // return redirect()->back()->with('success', 'Product added to cart successfully!');
+            return view('contents.cart');
         }
         // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Product added to cart successfully!');
+            // return redirect()->back()->with('success', 'Product added to cart successfully!');
+            return view('contents.cart');
         }
         // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
@@ -131,7 +152,8 @@ class ProductController extends Controller
             // "photo" => $product->photo
         ];
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        // return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return view('contents.cart');
     }
 
     public function update(Request $request)
@@ -142,6 +164,7 @@ class ProductController extends Controller
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
             session()->flash('success', 'Cart updated successfully');
+            // redirect('/cart')->with('success', 'Cart updated!');
         }
     }
 
@@ -154,7 +177,10 @@ class ProductController extends Controller
                 session()->put('cart', $cart);
             }
             session()->flash('success', 'Product removed successfully');
+            // return redirect('/cart')->with('success', 'Item removed!');
         }
         //return view('contents.main');
     }
+
+
 }

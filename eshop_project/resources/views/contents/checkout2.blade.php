@@ -8,51 +8,37 @@
             <div class="jumbotron">
                 <h1 class="h-heading">Personal information</h1>
                 <hr class="my-4">
-                <form>
+                {!! Form::open(['url' =>'credentials', 'method' => 'POST']) !!}
                     <div class="form-group row justify-content-center">
-                        <label for="inputFirstName" class="col-sm-5 col-md-4 col-lg-3 col-form-label">First
-                            Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputFirstName">
-                        </div>
-                    </div>
+                        {{Form::label('title', 'First Name', ['class'=> 'col-sm-5 col-md-4 col-lg-3 col-form-label'])}}
+                        {{Form::text('firstName', '', ['class' => 'col-md-6 form-control'])}}
+                    </div> 
                     <div class="form-group row justify-content-center">
-                        <label for="inputLastName" class="col-sm-5 col-md-4 col-lg-3 col-form-label">Last
-                            Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputLastName">
-                        </div>
-                    </div>
+                        {{Form::label('title', 'Last Name', ['class'=> 'col-sm-5 col-md-4 col-lg-3 col-form-label'])}}
+                        {{Form::text('lastName', '', ['class' => 'col-md-6 form-control'])}}
+                    </div> 
                     <div class="form-group row justify-content-center">
-                        <label for="inputAddress" class="col-sm-5 col-md-4 col-lg-3 col-form-label">Address</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputAddress">
-                        </div>
-                    </div>
+                        {{Form::label('title', 'Address', ['class'=> 'col-sm-5 col-md-4 col-lg-3 col-form-label'])}}
+                        {{Form::text('address', '', ['class' => 'col-md-6 form-control'])}}
+                    </div> 
                     <div class="form-group row justify-content-center">
-                        <label for="inputCity" class="col-sm-5 col-md-4 col-lg-3 col-form-label">City</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputCity">
-                        </div>
-                    </div>
+                        {{Form::label('title', 'City', ['class'=> 'col-sm-5 col-md-4 col-lg-3 col-form-label'])}}
+                        {{Form::text('city', '', ['class' => 'col-md-6 form-control'])}}
+                    </div> 
                     <div class="form-group row justify-content-center">
-                        <label for="inputEmail" class="col-sm-5 col-md-4 col-lg-3 col-form-label">E-mail</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputEmail">
-                        </div>
-                    </div>
+                        {{Form::label('title', 'E-mail', ['class'=> 'col-sm-5 col-md-4 col-lg-3 col-form-label'])}}
+                        {{Form::text('email', '', ['class' => 'col-md-6 form-control'])}}
+                    </div> 
                     <div class="form-group row justify-content-center">
-                        <label for="inputPhoneNumber" class="col-sm-6 col-md-4 col-lg-3 col-form-label">Phone
-                            Number</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputPhoneNumber">
-                        </div>
-                    </div>
-                </form>
+                        {{Form::label('title', 'Phone number', ['class'=> 'col-sm-5 col-md-4 col-lg-3 col-form-label'])}}
+                        {{Form::text('phoneNumber', '', ['class' => 'col-md-6 form-control'])}}
+                    </div> 
                 <div class="d-flex justify-content-between button-row">
-                    <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('checkout') }}'">Back</button></a>
-                    <a><button class="btn btn-dark btn-sm" onclick="location.href='{{ url('/') }}'">Finish your order</button></a>
+
+                    {{Form::button('Back', ['class' => 'btn btn-dark btn-sm'])}}
+                    {{Form::submit('Finish your order', ['class' => 'btn btn-dark btn-sm'])}}
                 </div>
+                {!! Form::close() !!}
             </div>
         </div>
     </main>

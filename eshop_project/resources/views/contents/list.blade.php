@@ -11,7 +11,7 @@
                 <input class="no-border"
                        type="text" name="query" placeholder="Search" aria-label="Search">
             </form>
-            <a class="nav-link btn btn-color mt-1" href="#">
+            <a class="nav-link btn btn-color mt-1" href="{{ url('/cart') }}">
                 <i class="fas fa-shopping-cart fa-2x"></i>
             </a>
         </div>
@@ -27,7 +27,10 @@
             <li class="dropdown-submenu">
                 <a tabindex="-1" href="#" class="blc">Price</a>
                 <ul class="dropdown-menu">
-                    <li class="pl-1"><input type="number" min=0 size="1"> - <input type="number" min=1 size="1"></li>
+                    <li><a tabindex="-1" href="{{$url}}pricemin=0&pricemax=99&page=1" class="blc">0-99</a></li>
+                    <li><a href="{{$url}}pricemin=100&pricemax=299&page=1" class="blc">100-299</a></li>
+                    <li><a href="{{$url}}pricemin=300&pricemax=699&page=1" class="blc">300-699</a></li>
+                    <li><a href="{{$url}}pricemin=700&pricemax=99999&page=1" class="blc">700+</a></li>
                 </ul>
             </li>
             <li class="dropdown-submenu">
@@ -36,14 +39,20 @@
                     <li><a tabindex="-1" href="/list/office" class="blc">Office</a></li>
                     <li><a href="/list/photo_audio_video" class="blc">Audio</a></li>
                     <li><a href="/list/notebooks" class="blc">Notebooks</a></li>
+                    <li><a href="/list/monitors" class="blc">Monitors</a></li>
+                    <li><a href="/list/mobile_phones" class="blc">Mobiles</a></li>
+                    <li><a href="/list/tvs" class="blc">TV's</a></li>
+                    <li><a href="/list/smartwatches" class="blc">Smart Watches</a></li>
+                    <li><a href="/list/gaming_devices" class="blc">Gaming Devices</a></li>
                 </ul>
             </li>
             <li class="dropdown-submenu">
                 <a tabindex="-1" href="#" class="blc">Brand</a>
                 <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="#" class="blc">Sony</a></li>
-                    <li><a href="#" class="blc">Samsung</a></li>
-                    <li><a href="#" class="blc">Apple</a></li>
+                    <li><a tabindex="-1" href="{{$url}}brand=Sony&page=1" class="blc">Sony</a></li>
+                    <li><a href="{{$url}}brand=Samsung&page=1" class="blc">Samsung</a></li>
+                    <li><a href="{{$url}}brand=Apple&page=1" class="blc">Apple</a></li>
+                    <li><a href="{{$url}}brand=Dell&page=1" class="blc">Dell</a></li>
                 </ul>
             </li>
             <li class="dropdown-submenu">
@@ -64,6 +73,7 @@
         </a>
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
             <li><a tabindex="-1" href="{{$url}}order=title&how=asc" class="blc">Aplhabetically</a></li>
+            <li><a tabindex="-1" href="{{$url}}order=rating&how=asc" class="blc">Rating</a></li>
             <li><a tabindex="-1" href="{{$url}}order=price&how=asc" class="blc">Price ascending</a></li>
             <li><a tabindex="-1" href="{{$url}}order=price&how=desc" class="blc">Price descending</a></li>
         </ul>

@@ -12,10 +12,10 @@
         <div class="searchbar">
             <div class="input-group row">
                 <form class="form-control col-7 col-md-4 col-sm-8 mt-2 py-1 mx-auto" type="get" action="{{ url('/list/search') }}">
-                    <input class="no-border"
+                    <input class="no-border col-7 col-md-4 col-sm-8"
                            type="text" name="query" placeholder="Search" aria-label="Search">
                 </form>
-                <a class="nav-link btn btn-color mt-1" href="#">
+                <a class="nav-link btn btn-color mt-1" href="{{ url('/cart') }}">
                     <i class="fas fa-shopping-cart fa-2x"></i>
                 </a>
             </div>
@@ -184,8 +184,10 @@
                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                     <div class="card">
                         <div class="img-container">
-                            <img src="./img/Featured/lens-3143893_640.jpg" alt="High zoom camera"
-                                 class="card-img-top"/>
+                            <a href="/product/1">
+                                <img src="./img/Featured/lens-3143893_640.jpg" alt="High zoom camera"
+                                     class="card-img-top"/>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
@@ -203,8 +205,10 @@
                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                     <div class="card">
                         <div class="img-container">
-                            <img src="./img/Featured/earphones-791188_640.jpg" alt="Good quality earphones"
-                                 class="card-img-top"/>
+                            <a href="/product/2">
+                                <img src="./img/Featured/earphones-791188_640.jpg" alt="Good quality earphones"
+                                     class="card-img-top"/>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
@@ -222,8 +226,10 @@
                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                     <div class="card">
                         <div class="img-container">
+                            <a href="/product/3">
                             <img src="./img/Featured/smart-watch-821559_640.jpg" alt="Smart Watch"
                                  class="card-img-top"/>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
@@ -276,8 +282,10 @@
                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                     <div class="card">
                         <div class="img-container">
-                            <img src="./img/Featured/tv-627876_640.jpg" alt="LED TV"
-                                 class="card-img-top"/>
+                            <a href="/product/15">
+                                <img src="./img/Featured/tv-627876_640.jpg" alt="LED TV"
+                                     class="card-img-top"/>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
@@ -295,8 +303,10 @@
                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                     <div class="card">
                         <div class="img-container">
-                            <img src="./img/slider-setup.jpg" alt="Setup for begginers"
-                                 class="card-img-top"/>
+                            <a href="/product/22">
+                                <img src="./img/slider-setup.jpg" alt="Setup for begginers"
+                                     class="card-img-top"/>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
